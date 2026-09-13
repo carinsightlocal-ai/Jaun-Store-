@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="fluxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9E80"/>
+      <stop offset="50%" stop-color="#FF6D00"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <linearGradient id="fluxBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241416"/>
+      <stop offset="100%" stop-color="#0E0A0D"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#fluxBg)" stroke="url(#fluxGrad)" stroke-width="3"/>
+  <path d="M40 38l24-16 24 16v32l-24 16-24-16z" fill="none" stroke="url(#fluxGrad)" stroke-width="4"/>
+  <circle cx="64" cy="54" r="12" fill="url(#fluxGrad)"/>
+  <path d="M36 94h56M46 102h36" stroke="url(#fluxGrad)" stroke-width="3" stroke-linecap="round"/>
+</svg>

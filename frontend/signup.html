@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP Sign Up — Jaun Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/icons/warmup/icon128.png">
+</head>
+<body>
+
+  <div class="auth-page-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <a href="index.html" class="auth-logo-badge" title="Jaun Store Home">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5m14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+          </svg>
+        </a>
+        <h1 class="auth-title">Join <span>Jaun Store</span></h1>
+        <p class="auth-subtitle">Create your VIP account to access tools and write reviews</p>
+      </div>
+
+      <form id="signupForm">
+        <div class="auth-form-group">
+          <label for="userName">Full Name</label>
+          <div class="auth-input-wrapper">
+            <span class="auth-input-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            <input type="text" id="userName" class="auth-input" placeholder="e.g. John Doe" required autocomplete="name">
+          </div>
+        </div>
+
+        <div class="auth-form-group">
+          <label for="signupEmail">Email Address</label>
+          <div class="auth-input-wrapper">
+            <span class="auth-input-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <input type="email" id="signupEmail" class="auth-input" placeholder="name@example.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="auth-form-group">
+          <label for="signupPassword">Password</label>
+          <div class="auth-input-wrapper">
+            <span class="auth-input-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0110 0v4"></path>
+              </svg>
+            </span>
+            <input type="password" id="signupPassword" class="auth-input" placeholder="At least 6 characters" required minlength="6" autocomplete="new-password">
+          </div>
+        </div>
+
+        <div class="auth-form-group">
+          <label for="signupConfirmPassword">Confirm Password</label>
+          <div class="auth-input-wrapper">
+            <span class="auth-input-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </span>
+            <input type="password" id="signupConfirmPassword" class="auth-input" placeholder="Repeat your password" required minlength="6" autocomplete="new-password">
+          </div>
+        </div>
+
+        <div id="authAlert" class="auth-alert-message"></div>
+
+        <button type="submit" class="btn-auth-submit" id="btnSignupSubmit">
+          <span>Create VIP Account</span>
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </form>
+
+      <div class="auth-footer-links">
+        <p>Already have an account? <a href="login.html">Sign In here</a></p>
+        <p style="margin-top: 10px;">
+          <a href="index.html" style="color: var(--text-muted); font-weight: 500;">&larr; Back to Jaun Store</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { backend } from './js/firebase-backend.js';
+
+    const signupForm = document.getElementById('signupForm');
+    const nameInput = document.getElementById('userName');
+    const emailInput = document.getElementById('signupEmail');
+    const passInput = document.getElementById('signupPassword');
+    const confirmInput = document.getElementById('signupConfirmPassword');
+    const alertBox = document.getElementById('authAlert');
+    const submitBtn = document.getElementById('btnSignupSubmit');
+
+    function showAlert(msg, type = 'error') {
+      alertBox.textContent = msg;
+      alertBox.className = `auth-alert-message ${type}`;
+    }
+
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const password = passInput.value.trim();
+      const confirmPassword = confirmInput.value.trim();
+
+      if (!name || !email || !password) {
+        showAlert('Please fill in all required fields.');
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        showAlert('Passwords do not match. Please re-enter.');
+        return;
+      }
+
+      if (password.length < 6) {
+        showAlert('Password must be at least 6 characters long.');
+        return;
+      }
+
+      try {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Creating Account...</span>';
+        alertBox.style.display = 'none';
+
+        const res = await backend.registerUser(name, email, password);
+        
+        showAlert(`🎉 Account created! Welcome, ${res.user.displayName}. Redirecting...`, 'success');
+        setTimeout(() => {
+          if (res.user.isAdmin) {
+            window.location.href = 'admin.html';
+          } else {
+            window.location.href = 'index.html';
+          }
+        }, 1000);
+
+      } catch (err) {
+        showAlert(err.message || 'Registration failed. Please try again.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <span>Create VIP Account</span>
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

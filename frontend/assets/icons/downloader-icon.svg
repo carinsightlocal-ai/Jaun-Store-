@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="dlGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE57F"/>
+      <stop offset="60%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#805500"/>
+    </linearGradient>
+    <linearGradient id="dlBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181820"/>
+      <stop offset="100%" stop-color="#08080C"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#dlBg)" stroke="url(#dlGold)" stroke-width="3"/>
+  <circle cx="64" cy="64" r="44" fill="none" stroke="rgba(212,175,55,0.25)" stroke-width="3" stroke-dasharray="8 6"/>
+  <!-- Download Arrow & Tray -->
+  <path d="M64 36v38M48 60l16 16 16-16" stroke="url(#dlGold)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 88h48" stroke="url(#dlGold)" stroke-width="6" stroke-linecap="round"/>
+</svg>

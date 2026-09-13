@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaun Store — VIP AI Tools & Chrome Extensions</title>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://wa.me">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/icons/warmup/icon128.png">
+</head>
+<body>
+
+  <!-- Sticky VIP Navbar -->
+  <header class="navbar">
+    <a href="#" class="brand-container">
+      <div class="brand-logo-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5m14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+        </svg>
+      </div>
+      <div class="brand-text-group">
+        <span class="brand-title">Jaun Store</span>
+        <span class="brand-tagline">VIP Tools &amp; Extensions Hub</span>
+      </div>
+    </a>
+
+    <div class="nav-actions">
+      <div class="firebase-status-badge" id="firebaseStatusBadge">
+        <span class="cloud-dot"></span>
+        <span id="firebaseStatusText">Connecting Cloud...</span>
+      </div>
+      <div class="nav-pill-badge">
+        <span class="pulse-dot"></span>
+        <span>Ecosystem Live &bull; 5 VIP Tools</span>
+      </div>
+      <div class="navbar-auth-group" id="navbarAuthGroup">
+        <a href="login.html" class="btn-nav-auth btn-nav-login">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4m-5-4 5-5-5-5m5 5H3"/>
+          </svg>
+          <span>Login</span>
+        </a>
+        <a href="signup.html" class="btn-nav-auth btn-nav-signup">
+          <span>Sign Up</span>
+        </a>
+      </div>
+      <button class="btn-order-online" onclick="openOrderModal('jaun-bulk-download')" style="padding: 7px 14px; font-size: 12.5px; font-weight:800;" title="Instant Online Order">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+        </svg>
+        <span>⚡ Order VIP</span>
+      </button>
+      <button class="btn-admin-cloud" id="btnOpenAdmin" title="Firebase Cloud Catalog & Tools Manager">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+        </svg>
+        <span>Cloud Manager</span>
+      </button>
+      <button class="btn-help-guide" id="btnOpenGuide">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <span>Extension Install Guide</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-crown-badge">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <span>Official Jaun Khan Suite</span>
+      </div>
+      <h1 class="hero-title">Exclusive <span>VIP Tools</span> &amp; Store</h1>
+      <p class="hero-subtitle">
+        Download verified Chrome extensions, high-speed 4K bulk video downloaders, and upcoming enterprise suites.
+      </p>
+      <div style="display:flex; justify-content:center; gap:14px; margin-top:22px; flex-wrap:wrap;">
+        <button class="btn-order-online" onclick="openOrderModal('jaun-bulk-download')" style="padding:12px 24px; font-size:14px;">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+          <span>Instant Online Order (EasyPaisa / JazzCash)</span>
+        </button>
+        <a href="#toolsGrid" class="btn-nav-auth btn-nav-login" style="padding:12px 22px; font-size:14px; border-radius:var(--radius-md);">
+          <span>Browse VIP Catalog</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Controls: Search & Category Filter Pills -->
+    <section class="controls-container">
+      <div class="search-box-wrapper">
+        <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search by tool name, download, WhatsApp support...">
+      </div>
+
+      <div class="filter-pills" id="filterPills">
+        <button class="filter-btn active" data-category="all">
+          <span>All Tools</span>
+          <span class="filter-count" id="countAll">3</span>
+        </button>
+        <button class="filter-btn" data-category="extensions">
+          <span>Chrome Extensions</span>
+          <span class="filter-count" id="countExtensions">1</span>
+        </button>
+        <button class="filter-btn" data-category="desktop">
+          <span>Desktop Software</span>
+          <span class="filter-count" id="countDesktop">1</span>
+        </button>
+        <button class="filter-btn" data-category="webapps">
+          <span>Web Apps</span>
+          <span class="filter-count" id="countWebApps">1</span>
+        </button>
+        <button class="filter-btn" data-category="android">
+          <span>Android APK</span>
+          <span class="filter-count" id="countAndroid">1</span>
+        </button>
+        <button class="filter-btn" data-category="upcoming">
+          <span>Upcoming Suite</span>
+          <span class="filter-count" id="countUpcoming">2</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section class="store-container">
+      <div class="tools-grid" id="toolsGrid">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="closeDetailModal">&times;</button>
+      <div id="detailModalBody">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Install Guide Modal -->
+  <div class="modal-overlay" id="guideModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="closeGuideModal">&times;</button>
+      <div class="modal-header">
+        <div class="modal-icon">
+          <img src="assets/icons/warmup/icon128.png" alt="Jaun Warmup">
+        </div>
+        <div>
+          <div class="badge-vip" style="display:inline-block; margin-bottom: 6px;">Chrome Setup</div>
+          <h2 style="font-size: 22px; font-weight: 800; color: #FFF;">How to Install Any Extension in 60s</h2>
+          <p style="font-size: 13px; color: var(--text-secondary);">Simple 4-step developer mode installation for Google Chrome &amp; Brave.</p>
+        </div>
+      </div>
+
+      <div class="steps-timeline">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-info">
+            <h4>Download Free Package (Google Drive)</h4>
+            <p>Click the <strong>Download (Drive)</strong> button on the extension card in Jaun Store to open the Google Drive folder and download the extension package.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-info">
+            <h4>Extract / Unzip the Files</h4>
+            <p>Right-click the downloaded <code>.zip</code> file and select <strong>Extract All...</strong> to any permanent folder on your computer.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-info">
+            <h4>Open Chrome Extensions Manager</h4>
+            <p>In Google Chrome, type <code>chrome://extensions</code> in the address bar and press Enter.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-info">
+            <h4>Enable Developer Mode &amp; Load Unpacked</h4>
+            <p>Turn ON the <strong>Developer mode</strong> toggle switch at the top right, click <strong>Load unpacked</strong> button at the top left, and select the extracted extension folder!</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px; text-align: center;">
+        <button class="btn-download-primary" style="width: 100%;" onclick="closeAllModals()">
+          <span>Got it! Back to Store</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cloud Catalog Manager & Tool Publisher Modal -->
+  <div class="modal-overlay" id="adminModal">
+    <div class="modal-dialog" style="max-width: 680px;">
+      <button class="modal-close-btn" id="closeAdminModal">&times;</button>
+      <div class="modal-header">
+        <div class="modal-icon" style="background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));">
+          <svg width="24" height="24" fill="#000" viewBox="0 0 24 24">
+            <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="badge-vip" style="display:inline-block; margin-bottom: 6px;">Firebase Backend &bull; jaun-d2612</div>
+          <h2 style="font-size: 22px; font-weight: 800; color: #FFF;">Cloud Catalog &amp; Tool Manager</h2>
+          <p style="font-size: 13px; color: var(--text-secondary);">Manage dynamic products in Cloud Firestore &amp; seed default tools.</p>
+        </div>
+      </div>
+
+      <!-- Seed Action Card -->
+      <div style="background: rgba(212,175,55,0.08); border: 1px dashed var(--border-gold); border-radius: var(--radius-md); padding: 16px 20px; margin-bottom: 24px; display:flex; justify-content:space-between; align-items:center; gap: 16px; flex-wrap:wrap;">
+        <div>
+          <h4 style="font-size: 14px; font-weight: 800; color: #FFF; margin-bottom: 4px;">1-Click Cloud Sync</h4>
+          <p style="font-size: 12px; color: var(--text-secondary);">Upload all 5 default VIP tools into Firebase Firestore collection <code>tools</code>.</p>
+        </div>
+        <button class="btn-download-primary" id="btnSeedCatalog" style="padding: 10px 18px; font-size: 13px;">
+          <span>Sync to Firestore</span>
+        </button>
+      </div>
+
+      <!-- Add New Tool Form -->
+      <h3 style="font-size: 15px; font-weight: 800; color: var(--gold-light); margin-bottom: 12px; text-transform:uppercase; letter-spacing:0.5px;">Add New Tool to Cloud</h3>
+      <form id="addToolForm">
+        <div class="admin-form-grid">
+          <div class="admin-field-group">
+            <label>Tool ID (Slug)</label>
+            <input type="text" id="newToolId" placeholder="e.g. jaun-ai-copilot" required>
+          </div>
+          <div class="admin-field-group">
+            <label>Tool Title</label>
+            <input type="text" id="newToolTitle" placeholder="e.g. Jaun AI Copilot VIP" required>
+          </div>
+          <div class="admin-field-group">
+            <label>Subtitle / Tagline</label>
+            <input type="text" id="newToolSubtitle" placeholder="e.g. Next-Gen Automation Suite" required>
+          </div>
+          <div class="admin-field-group">
+            <label>Category</label>
+            <select id="newToolCategory" required>
+              <option value="extensions">Chrome Extensions</option>
+              <option value="desktop">Desktop Software</option>
+              <option value="webapps">Web Apps</option>
+              <option value="android">Android APK</option>
+              <option value="upcoming">Upcoming Suite</option>
+            </select>
+          </div>
+          <div class="admin-field-group">
+            <label>Price Display</label>
+            <input type="text" id="newToolPrice" placeholder="e.g. FREE or RS 560" value="FREE" required>
+          </div>
+          <div class="admin-field-group">
+            <label>Download Link / Drive URL / Web URL</label>
+            <input type="url" id="newToolUrl" placeholder="https://drive.google.com/..." required>
+          </div>
+        </div>
+
+        <div class="admin-field-group" style="margin-top: 14px;">
+          <label>Short Description</label>
+          <textarea id="newToolDesc" rows="2" placeholder="Brief 1-2 sentence description..." required></textarea>
+        </div>
+
+        <div class="admin-actions-row">
+          <span id="adminFormStatus" style="font-size: 13px; font-weight: 600; color: var(--gold-light);"></span>
+          <button type="submit" class="btn-download-primary" style="padding: 10px 24px;">
+            <span>Publish to Cloud</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- VIP Online Order Checkout Modal -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-dialog" style="max-width: 620px;">
+      <button class="modal-close-btn" id="closeOrderModal">&times;</button>
+      <div class="modal-header">
+        <div class="modal-icon" style="background: linear-gradient(135deg, #00E676, #00B0FF);">
+          <svg width="24" height="24" fill="#000" viewBox="0 0 24 24">
+            <path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="badge-vip" style="display:inline-block; margin-bottom: 4px;">Instant Checkout</div>
+          <h2 style="font-size: 22px; font-weight: 800; color: #FFF;">Online Order &amp; License</h2>
+          <p style="font-size: 13px; color: var(--text-secondary);">Direct digital delivery with EasyPaisa, JazzCash, or Bank Transfer.</p>
+        </div>
+      </div>
+
+      <!-- Selected Product Info Banner -->
+      <div class="order-product-card-preview">
+        <div class="order-product-meta" style="flex:1;">
+          <span style="font-size:11px; text-transform:uppercase; color:#00E676; font-weight:800; letter-spacing:0.8px;">Selected Package</span>
+          <select id="orderPackageSelect" style="width:100%; margin-top:6px; padding:8px 12px; background:#0A0C10; border:1px solid var(--border-gold); border-radius:8px; color:#FFF; font-size:13.5px; font-weight:700;">
+            <option value="jaun-bulk-download" data-price="RS 560" data-title="Jaun Bulk Download VIP">Jaun Bulk Download VIP — RS 560 (Lifetime)</option>
+            <option value="fb-vip-autouploader" data-price="RS 5,000" data-title="FB VIP Auto-Uploader Suite">FB VIP Auto-Uploader Suite — RS 5,000 (70% OFF 1-Year)</option>
+            <option value="custom-tool" data-price="RS 2,500" data-title="Custom Automation Tool Request">Custom VIP Automation Script / Tool — RS 2,500+</option>
+          </select>
+        </div>
+        <div class="order-price-badge" id="orderToolPrice">RS 560</div>
+      </div>
+
+      <!-- Payment Method Selector -->
+      <label style="font-size:12px; font-weight:700; color:var(--gold-light); text-transform:uppercase; display:block; margin-bottom:8px;">Choose Payment Method</label>
+      <div class="payment-methods-tabs" id="paymentMethodTabs">
+        <button type="button" class="payment-tab-btn active" data-method="easypaisa">
+          <span>🟢 EasyPaisa</span>
+        </button>
+        <button type="button" class="payment-tab-btn" data-method="jazzcash">
+          <span>🔴 JazzCash</span>
+        </button>
+        <button type="button" class="payment-tab-btn" data-method="bank">
+          <span>🏛️ Bank Transfer</span>
+        </button>
+      </div>
+
+      <!-- Payment Instructions / Account Box -->
+      <div class="payment-details-box" id="paymentDetailsBox">
+        <div class="account-row">
+          <span class="account-label">Account Title:</span>
+          <span class="account-value" id="accountTitle">RAHAN KHAN</span>
+        </div>
+        <div class="account-row">
+          <span class="account-label">Account Number:</span>
+          <span class="account-value">
+            <span id="accountNumber">03361849934</span>
+            <button type="button" class="btn-copy-account" id="btnCopyAccount">Copy</button>
+          </span>
+        </div>
+        <div class="account-row">
+          <span class="account-label">Instructions:</span>
+          <span class="account-value" style="font-size:12px; font-weight:500; color:var(--text-secondary);" id="accountNote">Send the exact amount and enter Transaction ID (TRX ID) below.</span>
+        </div>
+      </div>
+
+      <!-- Order Customer Form -->
+      <form id="onlineOrderForm">
+        <input type="hidden" id="orderToolId" value="">
+        <div class="admin-form-grid">
+          <div class="admin-field-group">
+            <label for="orderCustomerName">Your Full Name</label>
+            <input type="text" id="orderCustomerName" placeholder="e.g. Ali Ahmed" required>
+          </div>
+          <div class="admin-field-group">
+            <label for="orderCustomerWhatsApp">WhatsApp Number</label>
+            <input type="tel" id="orderCustomerWhatsApp" placeholder="e.g. 03361849934" required>
+          </div>
+          <div class="admin-field-group">
+            <label for="orderCustomerEmail">Email Address (Optional)</label>
+            <input type="email" id="orderCustomerEmail" placeholder="your@email.com">
+          </div>
+          <div class="admin-field-group">
+            <label for="orderTrxId">Transaction ID (TRX ID)</label>
+            <input type="text" id="orderTrxId" placeholder="e.g. 84729104820" required>
+          </div>
+        </div>
+
+        <div id="orderStatusMsg" style="margin-top:12px; font-size:13px; font-weight:600;"></div>
+
+        <div class="admin-actions-row">
+          <button type="button" class="btn-nav-auth btn-nav-login" id="btnCancelOrder">Cancel</button>
+          <button type="submit" class="btn-order-online" id="btnSubmitOrder" style="padding:11px 26px; font-size:14px;">
+            <span>Confirm &amp; Place Order</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Order Success View (Hidden by default) -->
+      <div id="orderSuccessView" style="display:none; text-align:center; padding:20px 0;">
+        <div style="width:60px; height:60px; border-radius:50%; background:rgba(0,230,118,0.15); border:2px solid #00E676; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; color:#00E676;">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h3 style="font-size:20px; font-weight:800; color:#FFF; margin-bottom:6px;">Order Placed Successfully!</h3>
+        <p style="font-size:13.5px; color:var(--text-secondary); max-width:440px; margin:0 auto 16px;">
+          Your order <strong style="color:var(--gold-light);" id="receiptOrderId">ORD-12345</strong> has been received. Our team will verify your payment and dispatch the license.
+        </p>
+        <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+          <a href="#" id="orderWhatsAppConfirmLink" target="_blank" class="btn-whatsapp-primary" style="display:inline-flex; padding:11px 22px; font-size:13.5px;">
+            <span>WhatsApp Confirmation</span>
+          </a>
+          <button type="button" class="btn-download-primary" id="btnDoneOrder" style="padding:11px 22px; font-size:13.5px;">
+            <span>Back to Store</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification">
+    <div class="toast-icon">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path d="M5 13l4 4L19 7"></path>
+      </svg>
+    </div>
+    <div class="toast-text">
+      <span class="toast-title" id="toastTitle">Download Started</span>
+      <span class="toast-desc" id="toastDesc">fb-auto-warmup-extension.zip is ready.</span>
+    </div>
+  </div>
+
+  <script src="js/store-data.js"></script>
+  <script type="module" src="js/firebase-backend.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

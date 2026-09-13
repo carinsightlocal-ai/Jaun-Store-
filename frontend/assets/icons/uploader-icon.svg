@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="upGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#80D8FF"/>
+      <stop offset="50%" stop-color="#00B0FF"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <linearGradient id="upBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#050B14"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#upBg)" stroke="url(#upGold)" stroke-width="3"/>
+  <!-- Cloud & Upload Arrow -->
+  <path d="M40 76a18 18 0 0110-32 24 24 0 0144 6 16 16 0 0110 30H40z" fill="none" stroke="url(#upGold)" stroke-width="4"/>
+  <path d="M64 88V56M52 68l12-12 12 12" stroke="url(#upGold)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
